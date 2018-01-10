@@ -1,4 +1,4 @@
-package com.example
+package com.example.specs
 
 import com.example.pages.GoogleHomePage
 import geb.spock.GebReportingSpec
