@@ -5,6 +5,7 @@
 */
 
 
+import org.openqa.selenium.WebDriver
 import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.firefox.FirefoxDriver
@@ -12,13 +13,18 @@ import org.openqa.selenium.firefox.FirefoxDriver
 waiting {
 	timeout = 2
 }
+reportsDir = new File("build/reports")
 
 environments {
 
 	// run via “./gradlew chromeTest”
 	// See: http://code.google.com/p/selenium/wiki/ChromeDriver
 	chrome {
-		driver = { new ChromeDriver() }
+		def chromeDriver = new File('src/test/resources/chromedriver.exe')
+		ChromeOptions options = new ChromeOptions()
+		options.addArguments("start-maximized")
+		System.setProperty('webdriver.chrome.driver', chromeDriver.absolutePath)
+		def driverInstance = { new ChromeDriver(options) }
 	}
 
 	// run via “./gradlew chromeHeadlessTest”
@@ -42,5 +48,5 @@ environments {
 }
 
 // To run the tests with all browsers just run “./gradlew test”
-
-baseUrl = "http://gebish.org"
+//
+baseUrl = "http://www.google.com"

@@ -2,15 +2,16 @@ package com.example.specs
 
 import com.example.pages.GoogleHomePage
 import geb.spock.GebReportingSpec
-
+import org.junit.Test
 
 
 class GoogleHomePageSpec extends GebReportingSpec {
 
+    @Test
     def "Navigate to the Google Home Page"() {
 
         when:
-        to GoogleHomePage
+        browser.to GoogleHomePage
 
         then:
         assert GoogleHomePage.searchBar.isDisplayed()
