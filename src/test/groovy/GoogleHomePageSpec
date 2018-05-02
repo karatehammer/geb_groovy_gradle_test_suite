@@ -1,6 +1,4 @@
-package com.example.specs
-
-import com.example.pages.GoogleHomePage
+import GoogleHomePage
 import geb.spock.GebReportingSpec
 import org.junit.Test
 

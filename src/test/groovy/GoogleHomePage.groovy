@@ -1,5 +1,3 @@
-package com.example.pages
-
 import geb.Page
 
 class GoogleHomePage extends Page{
